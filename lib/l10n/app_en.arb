@@ -6,5 +6,7 @@
   "appName": "Flutter Newspaper",
 
   "article": "Article",
-  "searchArticle": "Search Article"
+  "searchArticle": "Search Article",
+  "author": "Author",
+  "fullArticle": "Show full article in webview here"
 }

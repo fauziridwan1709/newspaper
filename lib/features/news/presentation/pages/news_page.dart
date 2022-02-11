@@ -23,7 +23,7 @@ class _NewsPageState extends BaseStateful<NewsPage> {
     _lastStringQ = val;
     if (_debounce?.isActive ?? false) _debounce?.cancel();
     context.read<SearchArticleBloc>().hasReachedMax = false;
-    _debounce = Timer(const Duration(milliseconds: 50), () {
+    _debounce = Timer(const Duration(milliseconds: 800), () {
       final initialQ = QuerySearchArticle(q: val);
       context.read<SearchArticleBloc>().add(
             SearchArticle(

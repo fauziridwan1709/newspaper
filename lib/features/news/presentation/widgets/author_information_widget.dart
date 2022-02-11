@@ -11,10 +11,11 @@ class AuthorInformationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.theme;
+    final l10n = context.l10n;
     return Row(
       children: [
         Text(
-          'Author: ',
+          '${l10n.author}: ',
           style: FontTheme.rubik16w500black1().copyWith(
             color: theme.cardColor,
           ),
