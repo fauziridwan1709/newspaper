@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newspaper/core/extensions/build_context_extension.dart';
 
 /// A circle loading widget.
 class CircleLoading extends StatelessWidget {
@@ -12,7 +13,7 @@ class CircleLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final theme = context.theme;
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(5),
@@ -20,7 +21,7 @@ class CircleLoading extends StatelessWidget {
           height: size,
           width: size,
           child: CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation(theme.colorScheme.primary),
+            valueColor: AlwaysStoppedAnimation(theme.cardColor),
           ),
         ),
       ),

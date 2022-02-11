@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/app.dart';
-import 'package:flutter_strong_boilerplate/core/environments/config.dart';
-import 'package:flutter_strong_boilerplate/core/environments/flavor.dart';
+import 'package:newspaper/app.dart';
+import 'package:newspaper/core/environments/config.dart';
+import 'package:newspaper/core/environments/flavor.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,0 +1,10 @@
+{
+  "@@locale" : "en",
+
+  "companyName": "PT HZN Teknologi Indonesia",
+
+  "appName": "Flutter Newspaper",
+
+  "article": "Article",
+  "searchArticle": "Search Article"
+}

@@ -1,9 +1,9 @@
 import 'package:better_player/better_player.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/organisms/base_app_bar.dart';
-import 'package:flutter_strong_boilerplate/core/theme/base_colors.dart';
-import 'package:flutter_strong_boilerplate/core/theme/font_theme.dart';
-import 'package:flutter_strong_boilerplate/services/launch_service.dart';
+import 'package:newspaper/core/bases/widgets/organisms/base_app_bar.dart';
+import 'package:newspaper/core/theme/base_colors.dart';
+import 'package:newspaper/core/theme/font_theme.dart';
+import 'package:newspaper/services/launch_service.dart';
 
 /// Custom video viewer
 ///

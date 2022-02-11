@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/core/theme/base_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:newspaper/core/theme/base_colors.dart';
 
 class FontTheme {
   /// Rubik
@@ -56,7 +56,7 @@ class FontTheme {
     return GoogleFonts.rubik(
       color: BaseColors.black,
       fontSize: 10,
-      fontWeight: FontWeight.normal,
+      fontWeight: FontWeight.w500,
     );
   }
 
@@ -78,7 +78,7 @@ class FontTheme {
 
   static TextStyle rubik16w500black1() {
     return GoogleFonts.rubik(
-      color: BaseColors.neutral100,
+      color: BaseColors.black,
       fontSize: 16,
       fontWeight: FontWeight.w500,
     );

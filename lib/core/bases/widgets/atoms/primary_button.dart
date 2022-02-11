@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flutter_strong_boilerplate/core/theme/base_colors.dart';
-import 'package:flutter_strong_boilerplate/core/theme/font_theme.dart';
+import 'package:newspaper/core/theme/base_colors.dart';
+import 'package:newspaper/core/theme/font_theme.dart';
 
 /// A Primary Button.
 class PrimaryButton extends StatelessWidget {

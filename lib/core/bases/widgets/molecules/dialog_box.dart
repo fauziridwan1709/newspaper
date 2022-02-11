@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/atoms/area_space.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/atoms/height_size.dart';
+import 'package:newspaper/core/bases/widgets/atoms/area_space.dart';
+import 'package:newspaper/core/bases/widgets/atoms/height_size.dart';
 
 abstract class DialogBox {
   const DialogBox();

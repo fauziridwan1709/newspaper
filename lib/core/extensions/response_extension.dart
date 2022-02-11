@@ -7,7 +7,7 @@ class Parsed<T> {
     this.data,
   ) {
     message = json['error'] ?? json['detail'] ?? '';
-    totalCount = json['total_count'] ?? 0;
+    totalCount = json['total_count'] ?? json['totalResults'] ?? 0;
   }
 
   Parsed.fromPaginationJson(

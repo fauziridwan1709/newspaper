@@ -1,5 +1,5 @@
-import 'package:flutter_strong_boilerplate/services/shared_preferences_service.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:newspaper/services/shared_preferences_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {

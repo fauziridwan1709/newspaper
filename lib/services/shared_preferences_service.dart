@@ -1,5 +1,5 @@
-import 'package:flutter_strong_boilerplate/core/constants/preferences_keys.dart';
 import 'package:logger/logger.dart';
+import 'package:newspaper/core/constants/preferences_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {

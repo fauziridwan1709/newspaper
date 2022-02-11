@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/core/bases/decorators/input_decorator.dart';
-import 'package:flutter_strong_boilerplate/core/theme/font_theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:newspaper/core/bases/decorators/input_decorator.dart';
+import 'package:newspaper/core/extensions/build_context_extension.dart';
+import 'package:newspaper/core/theme/font_theme.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
@@ -19,6 +20,7 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.theme;
     return Padding(
       padding: padding ?? EdgeInsets.zero,
       child: TextField(
@@ -26,6 +28,7 @@ class SearchBar extends StatelessWidget {
         onChanged: onChanged,
         style: FontTheme.rubik14w400black1(),
         decoration: TextInputDecorator.searchBar().copyWith(
+          fillColor: theme.inputDecorationTheme.fillColor,
           hintText: hintText,
           prefixIcon: Padding(
             padding: const EdgeInsets.all(8),

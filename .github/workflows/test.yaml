@@ -3,17 +3,15 @@ on:
   pull_request:
     branches:
       - main
-      - staging
       - development
   push:
     branches:
       - main
-      - staging
       - development
 
 jobs:
-  flutter_test:
-    name: Run flutter test and analyze
+  flutter_analyze:
+    name: Run flutter analyze
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,6 +25,4 @@ jobs:
       - run: |
           flutter doctor
           flutter pub get
-          flutter test --coverage
           flutter analyze
-          bash <(curl -s https://codecov.io/bash -t ${{ secrets.CODECOV_TOKEN }})

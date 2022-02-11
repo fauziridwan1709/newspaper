@@ -23,10 +23,10 @@ Flutter repository template version 0.0.1
 - [X] Firebase Analytics.
 - [X] Firebase Crashlytics.
 - [ ] Firebase Messaging.
-- [ ] Singletons (DIO & other services).
-- [ ] Formatter.    
-- [ ] WebView Service.
-- [ ] Localization.
+- [X] Singletons (DIO & other services).
+- [X] Formatter.    
+- [X] WebView Service.
+- [X] Localization.
 - [ ] Model Generator.
 - [ ] Fastlane.
 - [ ] Documentations (Readme.md's & Wikis).
@@ -38,7 +38,8 @@ Flutter repository template version 0.0.1
 ```tree
 ├── .github
 │   └── workflows
-│       └── test.yml
+│       ├── test.yml
+│       └── report.yml
 │ 
 ├── android
 ├── assets

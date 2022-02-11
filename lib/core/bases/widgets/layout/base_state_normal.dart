@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/core/screen/sizing_information.dart';
+import 'package:newspaper/core/screen/sizing_information.dart';
 
 abstract class BaseStateNormal {
   void init();
