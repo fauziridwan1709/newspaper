@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.main.flutter_strong_boilerplate">
+    package="com.main.newspaper">
    <application
         android:largeHeap="true"
         android:extractNativeLibs="false"

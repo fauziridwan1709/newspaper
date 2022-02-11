@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/core/theme/base_colors.dart';
+import 'package:newspaper/core/theme/base_colors.dart';
 
 import 'app_theme.dart';
 
@@ -14,6 +14,11 @@ class AppThemeImpl implements AppTheme {
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.black,
       ),
+      backgroundColor: BaseColors.black,
+      cardColor: BaseColors.white,
+      inputDecorationTheme: const InputDecorationTheme(
+        fillColor: BaseColors.neutral100,
+      ),
     );
   }
 
@@ -25,6 +30,17 @@ class AppThemeImpl implements AppTheme {
       brightness: Brightness.light,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
+      ),
+      backgroundColor: BaseColors.white,
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        selectedItemColor: BaseColors.white,
+        unselectedItemColor: BaseColors.white.withOpacity(.6),
+        type: BottomNavigationBarType.fixed,
+      ),
+      listTileTheme: const ListTileThemeData(dense: true),
+      cardColor: BaseColors.primary,
+      inputDecorationTheme: InputDecorationTheme(
+        fillColor: BaseColors.white,
       ),
     );
   }

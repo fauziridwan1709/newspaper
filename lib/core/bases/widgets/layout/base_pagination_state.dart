@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/layout/base_state_normal.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/molecules/custom_scaffold.dart';
-import 'package:flutter_strong_boilerplate/core/environments/config.dart';
-import 'package:flutter_strong_boilerplate/core/screen/sizing_information.dart';
-import 'package:flutter_strong_boilerplate/core/screen/sizing_information_builder.dart';
+import 'package:newspaper/core/bases/widgets/layout/base_state_normal.dart';
+import 'package:newspaper/core/bases/widgets/molecules/custom_scaffold.dart';
+import 'package:newspaper/core/environments/config.dart';
+import 'package:newspaper/core/screen/sizing_information.dart';
+import 'package:newspaper/core/screen/sizing_information_builder.dart';
 
 /// An abstractions for page which has pagination.
 abstract class BasePaginationState<T extends StatefulWidget> extends State<T>

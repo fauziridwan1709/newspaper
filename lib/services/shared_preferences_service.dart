@@ -1,5 +1,5 @@
-import 'package:flutter_strong_boilerplate/core/constants/preferences_keys.dart';
 import 'package:logger/logger.dart';
+import 'package:newspaper/core/constants/preferences_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesService {
@@ -8,11 +8,6 @@ class SharedPreferencesService {
   static Future<void> init() async {
     Logger().i('Initializing Shared Preference Service');
     _pref = await SharedPreferences.getInstance();
-  }
-
-  static Future<SharedPreferences> get instance async {
-    _pref ??= await SharedPreferences.getInstance();
-    return _pref!;
   }
 
   static Future<void> removeKey(String key) async {

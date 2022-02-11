@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/app.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/atoms/global_icon.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/atoms/height_size.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/atoms/primary_button.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/atoms/secondary_button.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/atoms/width_size.dart';
-import 'package:flutter_strong_boilerplate/core/bases/widgets/molecules/dialog_box.dart';
-import 'package:flutter_strong_boilerplate/core/theme/base_colors.dart';
-import 'package:flutter_strong_boilerplate/core/theme/font_theme.dart';
+import 'package:newspaper/app.dart';
+import 'package:newspaper/core/bases/widgets/atoms/global_icon.dart';
+import 'package:newspaper/core/bases/widgets/atoms/height_size.dart';
+import 'package:newspaper/core/bases/widgets/atoms/primary_button.dart';
+import 'package:newspaper/core/bases/widgets/atoms/secondary_button.dart';
+import 'package:newspaper/core/bases/widgets/atoms/width_size.dart';
+import 'package:newspaper/core/bases/widgets/molecules/dialog_box.dart';
+import 'package:newspaper/core/theme/base_colors.dart';
+import 'package:newspaper/core/theme/font_theme.dart';
 
 enum ConfirmationModalDialogType {
   info,

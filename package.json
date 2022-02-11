@@ -1,0 +1,16 @@
+{
+  "name": "test_lcov_bedge",
+  "version": "1.0.0",
+  "main": "coverage_badge_gen.js",
+  "license": "MIT",
+  "dependencies": {
+    "lcov2badge": "^0.1.2"
+  },
+  "scripts": {
+    "testscript": "node coverage_badge_gen.js",
+    "testrun": "yarn testscript"
+  },
+  "description": "lcov code coverage badge generator",
+  "repository": "https://github.com/fauziridwan1709/newspaper.git",
+  "author": "Muhamad Fauzi Ridwan <evan1001t@gmail.com>"
+}

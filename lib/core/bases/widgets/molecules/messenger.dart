@@ -1,7 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_strong_boilerplate/app.dart';
-import 'package:flutter_strong_boilerplate/core/theme/base_colors.dart';
+import 'package:newspaper/app.dart';
+import 'package:newspaper/core/theme/base_colors.dart';
 
 class Messenger {
   // TODO(any): create no connection messenger.

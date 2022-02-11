@@ -1,15 +1,15 @@
-# :pushpin: Flutter Boilerplate
+# :pushpin: Flutter Newspaper
 
 [![Generic badge](https://img.shields.io/badge/Flutter-2.8.1-blue)](https://flutter.dev/docs)
 [![Generic badge](https://img.shields.io/badge/Dart-2.15.1-blue)](https://dart.dev/guides)
 [![Generic badge](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
 [![Generic badge](https://img.shields.io/badge/Platform-iOS,Android,Web,MacOs-purple)](https://dart.dev/guides)
-[![test](https://github.com/clade-ventures/flutter-boilerplate/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/clade-ventures/flutter-boilerplate/actions/workflows/test.yaml)
-[![Generic badge](https://img.shields.io/badge/development-v0.0.1-brightgreen)](https://github.com/clade-ventures/flutter-boilerplate)
-[![codecov](https://codecov.io/gh/clade-ventures/flutter-boilerplate/branch/main/graph/badge.svg?token=Z1WV03U14P)](https://codecov.io/gh/clade-ventures/flutter-boilerplate)
+[![test](https://github.com/fauziridwan1709/newspaper/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/fauziridwan1709/newspaper/actions/workflows/test.yaml)
+[![Generic badge](https://img.shields.io/badge/development-v0.0.1-brightgreen)](https://github.com/fauziridwan1709/newspaper)
 [![Generic badge](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
+![Coverage](./coverage_badge.svg?sanitize=true)
 
-Flutter repository template version 0.0.1
+Newspaper app
 
 ## 	:round_pushpin: TODO
 - [X] BLoC Bases.
@@ -23,10 +23,10 @@ Flutter repository template version 0.0.1
 - [X] Firebase Analytics.
 - [X] Firebase Crashlytics.
 - [ ] Firebase Messaging.
-- [ ] Singletons (DIO & other services).
-- [ ] Formatter.    
-- [ ] WebView Service.
-- [ ] Localization.
+- [X] Singletons (DIO & other services).
+- [X] Formatter.    
+- [X] WebView Service.
+- [X] Localization.
 - [ ] Model Generator.
 - [ ] Fastlane.
 - [ ] Documentations (Readme.md's & Wikis).
@@ -38,7 +38,8 @@ Flutter repository template version 0.0.1
 ```tree
 ├── .github
 │   └── workflows
-│       └── test.yml
+│       ├── test.yml
+│       └── report.yml
 │ 
 ├── android
 ├── assets
@@ -59,10 +60,15 @@ Flutter repository template version 0.0.1
 │   │   └── theme
 │   │
 │   ├── feaures
-│   │   └── example_github_search
+│   │   └── news
 │   │       ├── daa
 │   │       ├── domain
 │   │       └── presentation
+│   │
+│   ├── l10n
+│   │   ├── app_en.arb
+│   │   ├── app_id.arb
+│   │   └── l10n.dart
 │   │
 │   └── services
 │       ├── date_service.dart
@@ -119,6 +125,11 @@ Notes:
     - [Firebase crashlytics](https://pub.dev/packages/firebase_crashlytics)
 
 ### 🚚 How to run, drive, and build Apk
+
+Make sure run this command before run the app to generate localizations.
+```shell
+flutter gen-l10n
+```
 
 Example how to run debug development app
 ```shell
@@ -182,29 +193,6 @@ Using [flutter BLoC](https://pub.dev/packages/flutter_bloc) for Business Logic C
 
 - on MacOs ```flutter test --coverage && genhtml -o coverage coverage/lcov.info```
 - on Windows ```flutter test --coverage```. Then open your git bash and type ```./genhtml.perl coverage/lcov.info -o coverage/html```
-
-### :dark_sunglasses: Example Feature
-
-<div style="text-align: center">
-    <table>
-        <tr>
-            <td style="text-align: center">
-                <img src="/assets/screenshots/lazy_loading_users.jpg" width="200"> 
-            </td>
-            <td style="text-align: center">
-                <img src="/assets/screenshots/index_loading_users.jpg" width="200">
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: center">
-                <img src="/assets/screenshots/lazy_loading_issues.jpg" width="200">
-            </td>
-            <td style="text-align: center">
-                <img src="/assets/screenshots/lazy_loading_users_not_found.jpg" width="200">
-            </td>
-        </tr>
-    </table>
-</div>
 
 ### :new: Versioning
 

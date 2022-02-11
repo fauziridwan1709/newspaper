@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_strong_boilerplate/services/shared_preferences_service.dart';
-import 'package:logger/logger.dart';
+import 'package:newspaper/services/app_logger.dart';
+import 'package:newspaper/services/shared_preferences_service.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 /// Defaults Dio Options
@@ -19,8 +19,8 @@ Future<Response> getIt(
   Dio? dio,
 }) async {
   final getHeaders = headers ?? SharedPreferencesService.getHeaders();
-  Logger().i('Url $url');
-  Logger().i('Headers $getHeaders');
+  AppLogger.i('Url $url');
+  AppLogger.i('Headers $getHeaders');
   final resp = await (dio ?? Injector.getAsReactive<Dio>().state)
       .get(
         url,
@@ -29,6 +29,7 @@ Future<Response> getIt(
         ),
       )
       .timeout(globalTimeout);
+  AppLogger.i(resp.data);
   return resp;
 }
 
@@ -39,8 +40,8 @@ Future<Response> postIt(
   Dio? dio,
 }) async {
   final getHeaders = headers ?? SharedPreferencesService.getHeaders();
-  Logger().i('Url $url');
-  Logger().i('Headers $getHeaders');
+  AppLogger.i('Url $url');
+  AppLogger.i('Headers $getHeaders');
   final resp = await (dio ?? Injector.getAsReactive<Dio>().state).post(
     url,
     data: json.encode(model),
@@ -48,8 +49,8 @@ Future<Response> postIt(
       headers: getHeaders,
     ),
   );
-  Logger().d('Response $resp');
-  Logger().d('Response code ${resp.statusCode}');
+  AppLogger.d('Response $resp');
+  AppLogger.d('Response code ${resp.statusCode}');
   return resp;
 }
 
@@ -60,8 +61,8 @@ Future<Response> putIt(
   Dio? dio,
 }) async {
   final getHeaders = headers ?? SharedPreferencesService.getHeaders();
-  Logger().i('Url $url');
-  Logger().i('Headers $getHeaders');
+  AppLogger.i('Url $url');
+  AppLogger.i('Headers $getHeaders');
   final resp = await (dio ?? Injector.getAsReactive<Dio>().state).put(
     url,
     data: model,
@@ -69,8 +70,8 @@ Future<Response> putIt(
       headers: getHeaders,
     ),
   );
-  Logger().d('Response $resp');
-  Logger().d('Response code ${resp.statusCode}');
+  AppLogger.d('Response $resp');
+  AppLogger.d('Response code ${resp.statusCode}');
   return resp;
 }
 
@@ -81,8 +82,8 @@ Future<Response> deleteIt(
   Dio? dio,
 }) async {
   final getHeaders = headers ?? SharedPreferencesService.getHeaders();
-  Logger().i('Url $url');
-  Logger().i('Headers $getHeaders');
+  AppLogger.i('Url $url');
+  AppLogger.i('Headers $getHeaders');
   final resp = await (dio ?? Injector.getAsReactive<Dio>().state).delete(
     url,
     data: model,
@@ -90,7 +91,7 @@ Future<Response> deleteIt(
       headers: getHeaders,
     ),
   );
-  Logger().d('Response $resp');
-  Logger().d('Response code ${resp.statusCode}');
+  AppLogger.d('Response $resp');
+  AppLogger.d('Response code ${resp.statusCode}');
   return resp;
 }

@@ -1,12 +1,10 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_strong_boilerplate/core/environments/endpoints.dart';
-import 'package:flutter_strong_boilerplate/core/environments/flavor.dart';
-import 'package:flutter_strong_boilerplate/services/local_notification_service.dart';
-import 'package:flutter_strong_boilerplate/services/shared_preferences_service.dart';
+import 'package:newspaper/core/environments/endpoints.dart';
+import 'package:newspaper/core/environments/flavor.dart';
+import 'package:newspaper/services/local_notification_service.dart';
+import 'package:newspaper/services/shared_preferences_service.dart';
 
 class Config {
   static Flavor? appFlavor;
@@ -28,13 +26,15 @@ class Config {
     imagesPath = '${assetsPath!}/images';
     iconsPath = '${assetsPath!}/icons';
 
-    await Firebase.initializeApp();
+    // TODO(Any): uncomment for firebase.
+    // await Firebase.initializeApp();
 
     /// Initialization of all services.
     await notificationPlugin.init();
     await SharedPreferencesService.init();
     if (kDebugMode && !kIsWeb) {
-      await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(false);
+      // await FirebaseCrashlytics.instance
+      // .setCrashlyticsCollectionEnabled(false);
       // TODO(any): crash
       // FirebaseCrashlytics.instance.crash();
     }

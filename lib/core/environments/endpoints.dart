@@ -1,9 +1,7 @@
 class Endpoints {
-  static const String baseUrl = 'https://api.github.com';
-  static const String baseDevUrl = 'https://api.github.com';
-  static const String baseStgUrl = 'https://api.github.com';
-  static const String basePrdUrl = 'https://api.github.com';
-  static const String searchIssues = '$baseUrl/search/issues';
-  static const String searchRepositories = '$baseUrl/search/repositories';
-  static const String searchUsers = '$baseUrl/search/users';
+  static const String baseUrl = 'https://newsapi.org/v2';
+  static const String baseDevUrl = baseUrl;
+  static const String baseStgUrl = baseUrl;
+  static const String basePrdUrl = baseUrl;
+  static const String searchNews = '$baseUrl/everything';
 }

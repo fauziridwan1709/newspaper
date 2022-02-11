@@ -1,0 +1,37 @@
+import 'dart:async';
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:newspaper/app.dart';
+import 'package:newspaper/core/bases/blocs/l10n/l10n_cubit.dart';
+import 'package:newspaper/core/bases/blocs/theme/theme_cubit.dart';
+import 'package:newspaper/core/bases/widgets/atoms/circle_loading.dart';
+import 'package:newspaper/core/bases/widgets/atoms/custom_network_image.dart';
+import 'package:newspaper/core/bases/widgets/atoms/global_icon.dart';
+import 'package:newspaper/core/bases/widgets/atoms/height_size.dart';
+import 'package:newspaper/core/bases/widgets/atoms/width_size.dart';
+import 'package:newspaper/core/bases/widgets/layout/base_pagination_state.dart';
+import 'package:newspaper/core/bases/widgets/layout/base_stateful.dart';
+import 'package:newspaper/core/bases/widgets/molecules/custom_scaffold.dart';
+import 'package:newspaper/core/bases/widgets/organisms/base_app_bar.dart';
+import 'package:newspaper/core/bases/widgets/organisms/search_bar.dart';
+import 'package:newspaper/core/extensions/build_context_extension.dart';
+import 'package:newspaper/core/extensions/date_time_extension.dart';
+import 'package:newspaper/core/screen/sizing_information.dart';
+import 'package:newspaper/core/theme/base_colors.dart';
+import 'package:newspaper/core/theme/font_theme.dart';
+import 'package:newspaper/features/news/data/models/_models.dart';
+import 'package:newspaper/features/news/domain/entities/_entities.dart';
+import 'package:newspaper/features/news/presentation/bloc/_bloc.dart';
+import 'package:newspaper/features/news/presentation/widgets/_widgets.dart';
+import 'package:newspaper/services/app_logger.dart';
+import 'package:newspaper/services/progress_web_view_state.dart';
+import 'package:states_rebuilder/states_rebuilder.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
+part 'article_detail_page.dart';
+part 'news_page.dart';
+part 'search_article_list_view.dart';
+part 'webview_article.dart';

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:newspaper/core/constants/route_name.dart';
+import 'package:newspaper/features/news/data/models/_models.dart';
+import 'package:newspaper/features/news/presentation/pages/_pages.dart';
 
 abstract class Navigation {
   Future<T?> navigateTo<T>(Widget newPage, [String routeName]);
@@ -6,6 +9,7 @@ abstract class Navigation {
   void pop<T>([T result]);
   void popUntil(String routeName);
   void updateHistory(String routeName);
+  bool canPop();
 }
 
 class NavigationService implements Navigation {
@@ -58,5 +62,19 @@ class NavigationService implements Navigation {
   @override
   void popUntil(String routeName) {
     navigatorKey.currentState?.popUntil(ModalRoute.withName(routeName));
+  }
+
+  @override
+  bool canPop() {
+    return navigatorKey.currentState?.canPop() ?? false;
+  }
+
+  Future<void> goToArticleDetail(ArticleModel article) async {
+    return push(
+      ArticleDetailPage(
+        article: article,
+      ),
+      RouteName.articleDetailPage,
+    );
   }
 }
