@@ -42,6 +42,7 @@ class _ArticleDetailPageState extends BaseStateful<ArticleDetailPage> {
             titlePadding: const EdgeInsets.fromLTRB(60, 16, 16, 16),
             title: Text(
               widget.article.title.toString(),
+              maxLines: 2,
             ),
             background: Stack(
               children: [
@@ -90,6 +91,13 @@ class _ArticleDetailPageState extends BaseStateful<ArticleDetailPage> {
                   ),
                   const HeightSize(20),
                   Text(
+                    widget.article.title.toString(),
+                    style: FontTheme.rubik16w500black1().copyWith(
+                      color: theme.cardColor,
+                    ),
+                  ),
+                  const HeightSize(8),
+                  Text(
                     widget.article.content.toString(),
                     style: FontTheme.rubik14w400black1().copyWith(
                       color: theme.cardColor,
@@ -124,7 +132,7 @@ class _ArticleDetailPageState extends BaseStateful<ArticleDetailPage> {
                       ),
                     ),
                   ),
-                  const HeightSize(2000),
+                  const HeightSize(200),
                 ],
               ),
             ),
