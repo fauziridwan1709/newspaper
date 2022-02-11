@@ -26,7 +26,9 @@ class SearchBar extends StatelessWidget {
       child: TextField(
         controller: controller,
         onChanged: onChanged,
-        style: FontTheme.rubik14w400black1(),
+        style: FontTheme.rubik14w400black1().copyWith(
+          color: theme.cardColor,
+        ),
         decoration: TextInputDecorator.searchBar().copyWith(
           fillColor: theme.inputDecorationTheme.fillColor,
           hintText: hintText,
