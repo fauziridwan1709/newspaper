@@ -31,6 +31,7 @@ class _ArticleDetailPageState extends BaseStateful<ArticleDetailPage> {
   Widget buildNarrowLayout(BuildContext context, SizingInformation sizeInfo) {
     final size = sizeInfo.screenSize;
     final theme = context.theme;
+    final l10n = context.l10n;
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
@@ -115,7 +116,7 @@ class _ArticleDetailPageState extends BaseStateful<ArticleDetailPage> {
                               horizontal: 12,
                             ),
                             child: Text(
-                              'Show full article in Webview here',
+                              l10n.fullArticle,
                               style: FontTheme.rubik14w400black1(),
                             ),
                           ),

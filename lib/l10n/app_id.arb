@@ -6,6 +6,8 @@
   "appName": "Flutter Newspaper",
 
   "article": "Artikel",
-  "searchArticle": "Cari Artikel"
+  "searchArticle": "Cari Artikel",
+  "author": "Penulis",
+  "fullArticle": "Lihat artikel full pada tampilan web"
 
 }
