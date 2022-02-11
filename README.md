@@ -9,7 +9,7 @@
 [![Generic badge](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 ![Coverage](./coverage_badge.svg?sanitize=true)
 
-Flutter repository template version 0.0.1
+Newspaper app
 
 ## 	:round_pushpin: TODO
 - [X] BLoC Bases.
