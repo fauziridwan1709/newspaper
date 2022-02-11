@@ -10,11 +10,6 @@ class SharedPreferencesService {
     _pref = await SharedPreferences.getInstance();
   }
 
-  static Future<SharedPreferences> get instance async {
-    _pref ??= await SharedPreferences.getInstance();
-    return _pref!;
-  }
-
   static Future<void> removeKey(String key) async {
     await _pref!.remove(key);
   }

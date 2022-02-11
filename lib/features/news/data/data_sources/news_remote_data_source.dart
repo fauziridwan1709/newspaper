@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:newspaper/core/client/dio.dart';
 import 'package:newspaper/core/environments/endpoints.dart';
 import 'package:newspaper/core/extensions/response_extension.dart';
@@ -9,13 +10,16 @@ abstract class NewsRemoteDataSource {
 }
 
 class NewsRemoteDataSourceImpl implements NewsRemoteDataSource {
+  NewsRemoteDataSourceImpl({this.dio});
+  final Dio? dio;
+
   @override
   Future<Parsed<List<ArticleModel>>> searchArticle(
     QuerySearchArticle query,
   ) async {
     final list = <ArticleModel>[];
     final url = '${Endpoints.searchNews}?$query';
-    final resp = await getIt(url);
+    final resp = await getIt(url, dio: dio);
     for (final data in resp.bodyAsMap['articles']) {
       list.add(ArticleModel.fromJson(data));
     }
