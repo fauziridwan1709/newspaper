@@ -267,29 +267,3 @@ class ThemeCubit extends Cubit<ThemeData> {
   }
 }
 ```
-
-
-### :key: Keystore & key.properties (Android)
-
-Create your own keystore for debug, development, staging, and production.
-then Create key.properties inside android folder, for example:
-```properties
-storePassword=wolffood30
-storePasswordDebug=dogfood30
-storePasswordDevelopment=dogfooddev30
-storePasswordStaging=dogfoodstg30
-keyPassword=wolffood30
-keyPasswordDebug=dogfood30
-keyPasswordDevelopment=dogfooddev30
-keyPasswordStaging=dogfoodstg30
-keyAlias=key
-# For debugging
-keyAliasDebug=androiddebugkey
-keyAliasDevelopment=key
-keyAliasStaging=key
-storeFile=release.jks
-# For debugging
-storeFileDebug=debug.jks
-storeFileDevelopment=releaseDevelopment.jks
-storeFileStaging=releaseStaging.jks
-```
