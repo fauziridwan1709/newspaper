@@ -120,7 +120,7 @@ android {
 
         production {
             dimension "apps"
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
         }
     }
 

@@ -267,3 +267,5 @@ class ThemeCubit extends Cubit<ThemeData> {
   }
 }
 ```
+
+flutter build apk --release --no-shrink --flavor development -t lib/main_development.dart --split-per-abi
