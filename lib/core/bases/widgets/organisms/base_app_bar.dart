@@ -33,7 +33,7 @@ class BaseAppBar extends AppBar {
                       if (additionalFunction != null) {
                         additionalFunction();
                       }
-                      nav.pop<void>();
+                      // nav.pop<void>();
                     } else {
                       onBackFunction();
                     }
