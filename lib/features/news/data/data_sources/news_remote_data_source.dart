@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:newspaper/core/client/dio.dart';
 import 'package:newspaper/core/environments/endpoints.dart';
 import 'package:newspaper/core/extensions/response_extension.dart';
 import 'package:newspaper/features/news/data/models/_models.dart';

@@ -103,7 +103,7 @@ class _NewsPageState extends BaseStateful<NewsPage> {
         preferredSize: const Size.fromHeight(kToolbarHeight + 10),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: SearchBar(
+          child: NewsSearchBar(
             hintText: l10n.searchArticle,
             padding: const EdgeInsets.only(bottom: 8),
             onChanged: _onSearch,

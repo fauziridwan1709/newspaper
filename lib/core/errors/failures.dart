@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:logger/logger.dart';
 
 abstract class Failure implements Exception {
   Failure({
@@ -17,45 +18,60 @@ abstract class Failure implements Exception {
 }
 
 class DioFailure implements Exception {
-  DioFailure.fromDioError(DioError dioError) {
+  DioFailure.fromDioError(DioException dioError) {
     switch (dioError.type) {
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         message = 'Request to API server was cancelled';
         break;
-      case DioErrorType.connectTimeout:
-        message = 'Connection timeout with API server';
-        break;
-      case DioErrorType.other:
-        message = 'Connection to API server failed due to internet connection';
-        break;
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.receiveTimeout:
         message = 'Receive timeout in connection with API server';
         break;
-      case DioErrorType.sendTimeout:
+      case DioExceptionType.sendTimeout:
         message = 'Send timeout in connection with API server';
         break;
-      case DioErrorType.response:
+      case DioExceptionType.connectionTimeout:
+        message = 'Connection timeout with API server';
+        break;
+      case DioExceptionType.badCertificate:
+        message = 'bad Certificate with API server';
+        break;
+      case DioExceptionType.badResponse:
         message = _handleResponseError(dioError.response);
+        statusCode = dioError.response?.statusCode;
+        break;
+      case DioExceptionType.connectionError:
+        // TODO: Handle this case.
+        break;
+      case DioExceptionType.unknown:
+        message = dioError.error?.toString() ??
+            'Connection to API server failed due to internet connection';
         break;
     }
   }
 
   String message = 'Permintaan gagal, silahkan coba lagi atau hubungi admin';
+  int? statusCode;
 
   String _handleResponseError(Response? res) {
     var errorMessage = message;
+    try {
+      if (res?.data is String) {
+        errorMessage = res?.data;
+      }
 
-    // ignore:
-    if (res?.data['message'] != null) {
-      errorMessage = res!.data['message'].toString();
-    }
+      if (res?.data['meta'] != null) {
+        errorMessage = res!.data['meta']['message'].toString();
+      }
 
-    if (res?.data['errors'] != null) {
-      errorMessage = res!.data['errors'].toString();
-    }
+      if (res?.data['errors'] != null) {
+        errorMessage = res!.data['errors'].toString();
+      }
 
-    if (res?.data['error'] != null) {
-      errorMessage = res!.data['error'].toString();
+      if (res?.data['message'] != null) {
+        errorMessage = res!.data['message'].toString();
+      }
+    } catch (e) {
+      Logger().e(e.toString());
     }
 
     return errorMessage;

@@ -1,54 +1,49 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
-import 'package:newspaper/core/errors/decider.dart';
 import 'package:newspaper/core/errors/failures.dart';
 
-/// Function for mapping api call into either success or failure.
-Future<Decide<Failure, T>> apiCall<T>(Future<T> t) async {
+/// Mapping api call into either success or failure.
+/// Returns Either.
+Future<Either<Failure, T>> apiCall<T>(Future<T> t) async {
   try {
+    Logger().i(t.toString());
     final futureCall = await t;
     return Right(futureCall);
-  } on DioError catch (e) {
-    Logger().wtf(e.error.runtimeType);
-    Logger().wtf(e.error.toString());
+  } on DioException catch (e) {
+    // AppLogger.instance.error(e, stackTrace: e.stackTrace);
     if (e.error is ArgumentError) {
-      final error = e.error as ArgumentError;
-      return Left(GeneralFailure(message: error.message));
+      final error = e.error as ArgumentError?;
+      return Left(GeneralFailure(message: error?.message));
     } else if (e.error is SocketException) {
-      Logger().e('Error: No Internet Connection');
-      return Left(NetworkFailure(message: 'No Internet Connection'));
+      return Left(NetworkFailure());
     } else if (e.error is TimeoutException) {
-      Logger().e('Error: Timeout');
       return Left(TimeoutFailure());
     } else if (e.error is FormatException) {
-      /// Case json not match || attribute name changed from BE
-      Logger().e('Error: Format from front end error');
-      return Left(GeneralFailure(message: 'Format Exception'));
-    } else if ((e.response?.statusCode ?? 0) == 403) {
-      Logger().e('Unauthorized');
-      return Left(GeneralFailure(message: 'Unauthorize'));
-    } else if ((e.response?.statusCode ?? 0) == 404) {
-      Logger().e('Not Found Failure');
-      return Left(
-        NotFoundFailure(
-          message: e.response?.data['message'] ?? 'Not Found',
-        ),
-      );
-    } else {
-      final message = DioFailure.fromDioError(e).message;
-      return Left(GeneralFailure(message: message));
-    }
-  } catch (e) {
-    Logger().e(e.toString());
-    Logger().e(e.runtimeType);
-    if (e is TypeError) {
-      return Left(GeneralFailure(message: 'Type Error occured'));
+      return Left(GeneralFailure(message: 'RuntimeErrorMessages.format'));
     }
 
-    ///case error FrontEnd Service
-    return Left(GeneralFailure(message: ''));
+    final failure = DioFailure.fromDioError(e);
+    final message = failure.message;
+    final code = failure.statusCode;
+    if (code == 403) return Left(UnauthorizedFailure(message: message));
+    if (code == 404) return Left(NotFoundFailure(message: message));
+    return Left(GeneralFailure(message: message));
+  } catch (e, stacktrace) {
+    Logger().e({
+      'stacktrace': stacktrace,
+      'type': e.runtimeType,
+      'toString()': e.toString(),
+    });
+    if (e is TypeError) {
+      return Left(GeneralFailure(message: RuntimeErrorMessages.typeError));
+    } else if (e is TimeoutException) {
+      return Left(TimeoutFailure());
+    }
+
+    return Left(GeneralFailure());
   }
 }

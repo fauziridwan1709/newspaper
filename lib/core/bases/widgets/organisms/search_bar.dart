@@ -4,8 +4,8 @@ import 'package:newspaper/core/bases/decorators/input_decorator.dart';
 import 'package:newspaper/core/extensions/build_context_extension.dart';
 import 'package:newspaper/core/theme/font_theme.dart';
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({
+class NewsSearchBar extends StatelessWidget {
+  const NewsSearchBar({
     Key? key,
     required this.controller,
     this.onChanged,
