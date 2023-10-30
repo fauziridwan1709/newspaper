@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:newspaper/core/environments/endpoints.dart';
 import 'package:newspaper/core/environments/flavor.dart';
-import 'package:newspaper/services/local_notification_service.dart';
 import 'package:newspaper/services/shared_preferences_service.dart';
 
 class Config {
@@ -30,7 +29,6 @@ class Config {
     // await Firebase.initializeApp();
 
     /// Initialization of all services.
-    await notificationPlugin.init();
     await SharedPreferencesService.init();
     if (kDebugMode && !kIsWeb) {
       // await FirebaseCrashlytics.instance
