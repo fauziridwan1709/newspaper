@@ -5,7 +5,7 @@ class NewsRepositoryImpl implements NewsRepository {
 
   NewsRepositoryImpl(this._remoteDataSource);
   @override
-  Future<Decide<Failure, Parsed<List<ArticleModel>>>> searchArticle(
+  Future<Either<Failure, Parsed<List<ArticleModel>>>> searchArticle(
     QuerySearchArticle query,
   ) {
     return apiCall(_remoteDataSource.searchArticle(query));

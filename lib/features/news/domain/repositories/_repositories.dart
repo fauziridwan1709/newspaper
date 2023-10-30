@@ -1,4 +1,4 @@
-import 'package:newspaper/core/errors/decider.dart';
+import 'package:dartz/dartz.dart';
 import 'package:newspaper/core/errors/failures.dart';
 import 'package:newspaper/core/extensions/response_extension.dart';
 import 'package:newspaper/features/news/data/models/_models.dart';
