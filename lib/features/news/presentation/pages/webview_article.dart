@@ -13,13 +13,25 @@ class WebViewArticle extends StatefulWidget {
 }
 
 class _WebViewArticleState extends State<WebViewArticle> {
-  final Completer<WebViewController> controller =
-      Completer<WebViewController>();
+  late final WebViewController controller;
 
   @override
   void initState() {
     super.initState();
-    if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: _onProgress,
+          onPageStarted: (String url) {
+            AppLogger.i('Page started loading: $url');
+          },
+          onPageFinished: _onPageFinish,
+          onNavigationRequest: _navigationDelegate,
+        ),
+      )
+      ..loadRequest(Uri.parse(widget.url));
   }
 
   @override
@@ -28,17 +40,8 @@ class _WebViewArticleState extends State<WebViewArticle> {
       body: SafeArea(
         child: Stack(
           children: [
-            WebView(
-              initialUrl: widget.url,
-              javascriptMode: JavascriptMode.unrestricted,
-              onWebViewCreated: controller.complete,
-              onProgress: _onProgress,
-              navigationDelegate: _navigationDelegate,
-              onPageStarted: (String url) {
-                AppLogger.i('Page started loading: $url');
-              },
-              onPageFinished: _onPageFinish,
-              gestureNavigationEnabled: true,
+            WebViewWidget(
+              controller: controller,
             ),
             // OnReactive(
             //   () {
