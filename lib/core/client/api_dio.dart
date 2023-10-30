@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
+import 'package:newspaper/core/interceptor/interceptor.dart';
 // import 'package:injectable/injectable.dart';
 // import 'package:my_techanic_core/my_techanic_core.dart';
 // import 'package:utils/utils.dart';
@@ -38,17 +39,16 @@ class ApiDio extends DioForNative {
     options
       ..sendTimeout = const Duration(seconds: 10)
       ..connectTimeout = const Duration(seconds: 10)
-      ..receiveTimeout = const Duration(seconds: 10)
-      ..baseUrl = Env().baseUrl;
+      ..receiveTimeout = const Duration(seconds: 10);
+    // ..baseUrl = Env().baseUrl;
   }
 
   void _configureInterceptors() {
     interceptors
       ..add(LoggerInterceptor())
-      ..add(AuthorizationInterceptor())
-      // TODO(ridwan): recheck this again later
-      // ..add(RetryInterceptor(dio: this, retries: 2))
-      ..add(AppDioCacheInterceptor())
-      ..add(ErrorHandlerInterceptor(dio: this));
+      ..add(AuthorizationInterceptor());
+    // TODO(ridwan): recheck this again later
+    // ..add(RetryInterceptor(dio: this, retries: 2))
+    // ..add(AppDioCacheInterceptor())
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:newspaper/app.dart';
 import 'package:newspaper/core/theme/base_colors.dart';
 import 'package:newspaper/core/theme/font_theme.dart';
 
@@ -24,7 +23,8 @@ class BaseAppBar extends AppBar {
             style: titleStyle ??
                 FontTheme.rubik14w500black1().copyWith(fontSize: 18),
           ),
-          leading: nav.canPop()
+          // leading: nav.canPop()
+          leading: false
               ? IconButton(
                   icon: Icon(icon),
                   color: leadingColor ?? BaseColors.neutral70,
