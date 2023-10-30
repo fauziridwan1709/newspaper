@@ -113,11 +113,11 @@ class _ArticleDetailPageState extends BaseStateful<ArticleDetailPage> {
                       child: Material(
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: () => nav.push(
-                            WebViewArticle(
-                              url: widget.article.url.toString(),
-                            ),
-                          ),
+                          // onTap: () => nav.push(
+                          //   WebViewArticle(
+                          //     url: widget.article.url.toString(),
+                          //   ),
+                          // ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                               vertical: 8,

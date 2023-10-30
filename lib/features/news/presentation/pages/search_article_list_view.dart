@@ -99,7 +99,7 @@ Cannot found ${widget.stringQuery}''',
                 final article = state.articles![i];
                 return NewsCard(
                   article: article,
-                  onTap: () => nav.goToArticleDetail(article),
+                  // onTap: () => nav.goToArticleDetail(article),
                 );
               },
               separatorBuilder: (_, __) => const SizedBox(

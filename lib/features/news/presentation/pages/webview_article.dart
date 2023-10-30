@@ -40,18 +40,18 @@ class _WebViewArticleState extends State<WebViewArticle> {
               onPageFinished: _onPageFinish,
               gestureNavigationEnabled: true,
             ),
-            OnReactive(
-              () {
-                if (progressWebViewRM.state.progress < 1.0) {
-                  return LinearProgressIndicator(
-                    value: progressWebViewRM.state.progress,
-                    valueColor:
-                        const AlwaysStoppedAnimation(BaseColors.primary),
-                  );
-                }
-                return const SizedBox.shrink();
-              },
-            )
+            // OnReactive(
+            //   () {
+            //     if (progressWebViewRM.state.progress < 1.0) {
+            //       return LinearProgressIndicator(
+            //         value: progressWebViewRM.state.progress,
+            //         valueColor:
+            //             const AlwaysStoppedAnimation(BaseColors.primary),
+            //       );
+            //     }
+            //     return const SizedBox.shrink();
+            //   },
+            // )
           ],
         ),
       ),
@@ -64,9 +64,9 @@ class _WebViewArticleState extends State<WebViewArticle> {
 
   void _onProgress(int progress) {
     AppLogger.i(progress);
-    progressWebViewRM.setState((s) {
-      s.progress = progress / 100;
-    });
+    // progressWebViewRM.setState((s) {
+    //   s.progress = progress / 100;
+    // });
   }
 
   NavigationDecision _navigationDelegate(NavigationRequest request) {

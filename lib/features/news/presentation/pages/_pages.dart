@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:newspaper/app.dart';
 import 'package:newspaper/core/bases/blocs/l10n/l10n_cubit.dart';
 import 'package:newspaper/core/bases/blocs/theme/theme_cubit.dart';
 import 'package:newspaper/core/bases/widgets/atoms/circle_loading.dart';
@@ -27,8 +26,6 @@ import 'package:newspaper/features/news/domain/entities/_entities.dart';
 import 'package:newspaper/features/news/presentation/bloc/_bloc.dart';
 import 'package:newspaper/features/news/presentation/widgets/_widgets.dart';
 import 'package:newspaper/services/app_logger.dart';
-import 'package:newspaper/services/progress_web_view_state.dart';
-import 'package:states_rebuilder/states_rebuilder.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 part 'article_detail_page.dart';

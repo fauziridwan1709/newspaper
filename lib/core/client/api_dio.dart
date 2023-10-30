@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
-import 'package:injectable/injectable.dart';
-import 'package:my_techanic_core/my_techanic_core.dart';
-import 'package:utils/utils.dart';
+// import 'package:injectable/injectable.dart';
+// import 'package:my_techanic_core/my_techanic_core.dart';
+// import 'package:utils/utils.dart';
 
-@injectable
+// @injectable
 class ApiDio extends DioForNative {
   ApiDio() {
     _configureOptions();
@@ -24,10 +24,10 @@ class ApiDio extends DioForNative {
             String host,
             int port,
           ) {
-            FirebaseCrashlytics.instance.recordError(
-              Exception(cert.pem),
-              StackTrace.fromString(cert.pem),
-            );
+            // FirebaseCrashlytics.instance.recordError(
+            //   Exception(cert.pem),
+            //   StackTrace.fromString(cert.pem),
+            // );
             print(cert.pem);
             return true;
           };

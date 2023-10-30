@@ -29,7 +29,7 @@ Future<Either<Failure, T>> apiCall<T>(Future<T> t) async {
     final failure = DioFailure.fromDioError(e);
     final message = failure.message;
     final code = failure.statusCode;
-    if (code == 403) return Left(UnauthorizedFailure(message: message));
+    // if (code == 403) return Left(UnauthorizedFailure(message: message));
     if (code == 404) return Left(NotFoundFailure(message: message));
     return Left(GeneralFailure(message: message));
   } catch (e, stacktrace) {
@@ -39,7 +39,7 @@ Future<Either<Failure, T>> apiCall<T>(Future<T> t) async {
       'toString()': e.toString(),
     });
     if (e is TypeError) {
-      return Left(GeneralFailure(message: RuntimeErrorMessages.typeError));
+      return Left(GeneralFailure(message: 'RuntimeErrorMessages.typeError'));
     } else if (e is TimeoutException) {
       return Left(TimeoutFailure());
     }

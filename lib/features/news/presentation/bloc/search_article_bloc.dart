@@ -2,7 +2,7 @@ part of '_bloc.dart';
 
 class SearchArticleBloc extends Bloc<SearchArticleEvent, SearchArticleState> {
   SearchArticleBloc() : super(SearchArticleInitial()) {
-    final _remoteDataSource = NewsRemoteDataSourceImpl();
+    final _remoteDataSource = NewsRemoteDataSourceImpl(dio: ApiDio());
     _repo = NewsRepositoryImpl(_remoteDataSource);
     on<SearchArticle>(_searchData);
     on<SearchMoreArticle>(_searchMoreData);

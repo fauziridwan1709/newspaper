@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:newspaper/core/bases/widgets/molecules/messenger.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // Please refer to https://pub.dev/packages/url_launcher
@@ -17,9 +16,7 @@ class LaunchServices {
         forceSafariVC: false,
         headers: <String, String>{'my_header_key': 'my_header_value'},
       );
-    } else {
-      Messenger.errorX('Cant launch the url');
-    }
+    } else {}
   }
 
   static Future<void> openEmail(
